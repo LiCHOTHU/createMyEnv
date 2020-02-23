@@ -118,7 +118,7 @@ class MujocoEnv(gym.Env):
 		for _ in range(n_frames):
 			self.sim.step()
 
-	def render(self, mode='rgb_array', width=DEFAULT_SIZE, height=DEFAULT_SIZE, depth=False):
+	def render(self, mode='human', width=DEFAULT_SIZE, height=DEFAULT_SIZE, depth=False):
 		if 'rgb_array' in mode:
 			self._get_viewer(mode).render(width, height, camera_id=2)
 			# window size used for old mujoco-py:

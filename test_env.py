@@ -3,35 +3,30 @@ import numpy as np
 import cv2
 from new_env.sawyer_hammer import SawyerHammerEnv
 # from metaworld.benchmarks import ML1
+from mujoco_py import load_model_from_path, MjSim
+from mujoco_py import GlfwContext
+GlfwContext(offscreen=True)
 
-# env = gym.make("Hopper-v3")
+
 env = SawyerHammerEnv()
-observation = env.reset()
+# observation = env.reset()
 
-# print(observation)
-actions = np.array([[0,0,-0.2,0],[0,0,-0.2,0.2], [0,0,0.2,0.2],[0.2,0,0.2,0.2]])
-print(env.get_endeff_pos())
+'''
+pose_fn = "./new_env/util/assets/sample_hammer/L/0/L_21838163_hammer.xml"
+img_fn = "./sample.png"
+model = load_model_from_path(pose_fn)
+sim = MjSim(model)
 
-print(env.get_site_pos('rightEndEffector'))
-print(env.get_site_pos('leftEndEffector'))
-print(env.init_fingerCOM)
-print(env.sim.data.ctrl)
 
-for i in range(200):
-  # env.render()
-  image = env.render()
-  if(i < 10):
-      img_idx = "00"+str(i)
-  if(i>100):
-      img_idx = str(i)
-  else:
-      img_idx = '0'+str(i)
+image, depth = sim.render(420, 380, camera_name="dataset", depth=True)
+image_flip = cv2.flip(image, 0)
+cv2.imwrite(img_fn, image_flip)
+'''
+for i in range(3000):
+  env.render()
+  action = env.action_space.sample()
 
-  image_name = img_idx+'.png'
-  cv2.imwrite(image_name, image[:,:,::-1])
-  # action = env.action_space.sample()
-
-  action = actions[i // 50]
+  # action = actions[i // 50]
 
   print("------this step {0}------".format(i))
   # print("observation info")

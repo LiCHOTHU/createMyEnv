@@ -32,6 +32,8 @@ Usage:
         <mesh name="l5" file="sawyer/l5.stl" />
         <mesh name="l6" file="sawyer/l6.stl" />
         <mesh name="eGripperBase" file="sawyer/eGripperBase.stl" />
+        <mesh name="hammer_handle" file="21838163_handle.stl" />
+        <mesh name="hammer_head" file="21838163_head.stl" />
 
 	<mesh name="mug_mesh" file="objects/mug.stl"  scale="0.0006 0.0006 0.0006"/>
         <texture type="skybox" builtin="gradient" rgb1=".50 .495 .48" rgb2=".50 .495 .48" width="32" height="32"></texture>

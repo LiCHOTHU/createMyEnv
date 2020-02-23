@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="hammer">
+    <camera name="dataset" mode="fixed" pos="0 -1 0" euler="1.5707963267948966 0 0" fovy="42.5"/>
+    <body name="hammer" pos="-0.2 0.6 0.02" euler="0 0 0">
+        <inertial pos="0 0 0" mass="10" diaginertia="10 10 10"/>
+        <geom type="mesh" rgba="0.208620 0.209692 0.509967 1" mesh="hammer_handle" solimp="0.998 0.998 0.001" solref="0.02 1" conaffinity="1" contype="1" group="1"/>
+        <geom type="mesh" rgba="0.736988 0.696383 0.464923 1" mesh="hammer_head" solimp="0.998 0.998 0.001" solref="0.02 1" conaffinity="1" contype="1" group="1"/>
+    </body>
+</mujoco>

@@ -38,7 +38,7 @@ class SawyerHammerEnv(SawyerXYZEnv):
         )
         # TODO should we put this to goal instead of initial config?
         self.init_config = {
-            'hammer_init_pos': np.array([0, 0.6, 0.02]),
+            'hammer_init_pos': np.array([-0.1, 0.8, 0.02]),
             'hand_init_pos': np.array([0, 0.6, 0.2]),
         }
         self.goal = self.init_config['hammer_init_pos']  # TODO: check this
